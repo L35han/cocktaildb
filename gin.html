@@ -1,0 +1,80 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Cocktail Palace</title>
+    </head>
+    <body>
+
+<table>
+    <tr>
+      <th>Gin & Vodka</th>
+      <th>40% Alc</th>
+      <th>(Cheapest)900 Ksh</th>
+      <th>(Expensive) 1100(Ksh)</th>
+    </tr>
+    <?php echo $drinkListing ?>
+  </table>
+    </tr>
+    <!-- Search for a drink from an online API -->
+    <form action="#https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nameElement.value}" method="post">
+        @csrf
+        <input type="text" id="searchInput" placeholder="Search Drinks..." name="query"/>
+        <button type="submit">Submit</button>
+    </form>
+
+<!-- link gin.html to gin.js -->
+<script src="/gin">
+    // Call the searchDrink function when user submits form
+    document.querySelector("form").addEventListener('submit', (event)=>{
+        event.preventDefault();
+        let input = document.getElementById('searchInput').value;
+        searchDrink(input);
+    });
+</script>
+    </body>
+</html>
+@if (isset($result))
+    <div class="container">
+        <h2>Results: {{ $result }}</h2>
+    </div>
+@endif
+
+    </body>
+</html>
+
+
+
+
+
+
+    <form action="gin.php" method="post">
+        <input type="text" id="search" name="search" placeholder="Search.."/>
+        <button type="submit" formmethod="get" value="Submit">Search</button>
+    </form>
+    
+    <!-- Display the results of search here -->
+    <div id="results"></div>
+
+
+
+<!-- Footer Section -->
+<footer class="site-footer">
+            <p class="copyright-text">Copyrighted by Cocktail Palace/>
+    </form>
+    <!-- <button class="addBtn" onclick="location.href='www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'"><b>Add Drink +</b></button><br/><br/>
+    <button onclick="location.href='add_a_cocktail.php'"><b>Add A Drink!</b></button><br/><br/> -->
+
+
+<!-- Form for searching the database -->
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+      Search: <input type="text" name="search">
+      <input type="submit" name="submit" value="Submit">
+    </form>
+<?php if (isset($results)) {echo "<h2>Search Results:</h2>";}?>
+<?php echo $message ?>
+    </body>
+</html>
+

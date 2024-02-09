@@ -1,0 +1,191 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Cocktail Palace</title>
+    </head>
+    <body>
+      Header
+      <?php include("header.php"); ?>
+
+      <!-- Main Content -->
+      <div class="mainContent">
+          <h2>About Us</h2>
+
+          <p>The Cocktail Palace is a small bar located in the heart of downtown San Antonio. We are dedicated to providing our customers with an exceptional drinking</p>
+            <nav>
+            <div class = "navTop">
+            <div class = "navItem">
+              <a href="homepage.php">Home</a>
+            </div>
+
+
+
+              <div class = "active navItem">
+                  About Us
+              </div>
+            </div>
+            </nav>
+
+          <section class="aboutUs">
+            <!-- <img src="images/drink3.jpg" alt="Drinks" /> -->
+            <p>The Cocktail Palace is a cozy bar located in the heart of Nairobi. Our mission is to provide our customers with an exceptional drinking experience
+                                       <span class = "db">Drink Responsibly!</span>
+                                       <article>
+                                        <h4>Our Story:</h4>
+                                         The Cocktail Palace was founded by two passionate bartenders who shared
+                                       </article>
+                            <!-- <input type="text" id="searchBar" oninput="filterList()" placeholder="Search...">
+                            <ul class="list"> -->
+                              <li>The Cocktail Palace was founded in the year 2005 by two friends who shared a passion for cocktails and good company.</li><br/>
+                              <li><strong>Name:</strong> Cocktail Palace<br/>
+                              <strong>Address:</strong> 56789 CBD Koinange, Nairobi<br/>
+                              <strong>Phone Number:</strong> (123) 456-7890<br/>
+                              <strong>Email Address:</strong> info@cocktailpalace.com<br/><br/>
+                              <button onclick="openForm()">Edit Information</button></li>
+                            </ul>
+                            <form id="myForm" action="" method="post" style="display:none">
+                            </form>
+                            <script src="index.js"></script>
+                            </section>
+    </ul>
+                            </div>
+
+      <div class = "navItem">
+        <a href="menu.php">Menu</a>
+            <ul class="categoryMenu hidden" id="catMenu">
+                <li><a href="whiskey.html">Whisky &amp; Cognac</a></li>
+                <li><a href="gin.html">Gin &amp; Vodka</a></li>
+                <li><a href="spirits.html">Spirituals (other than G&V)</a></li>
+            </ul>
+        </nav>
+      </div>
+        <main>
+            <!-- Home Section -->
+            <section id="home">
+                <h2>Welcome to the Cocktail Palace!<br/>Explore our extensive selection of cocktails and drinks.</h2>
+                <h2>Welcome to the Cocktail Palace!<br/>We're here to help you find your next drink.</h2>
+                <button onclick="location.href='menu.html';">Browse Our Menu</button>
+                </section>
+                 <!-- Category Menu Section -->
+            <section id="categories">
+              <!-- <h3>Choose a category:</h3>
+              <button class="accordion open" onclick="toggleAccordion(this)"><strong>Whiskies and Cognacs</strong></button>
+              <button class="accordion open" onclick="openCategory('whiskey')">Whisky &amp; Cognac</button>
+              <div class="panel whiskey" id="whiskeyPanel">
+                <table>
+
+                  <tr>
+                    <th>Name</th>
+                    <th>Alcohol Content %</th>
+                    <th>Price ($)</th>
+                  </tr>
+                  <?php echo $drinkListing ?>
+                </table>
+                  </tr>
+
+              </div>
+              <div class="panel whiskey">
+
+              </div>
+              <button class="accordion" onclick="openCategory('ginevra')">Gin &amp; Vodka</button>
+              <div class="panel ginevra">
+
+              </div>
+              <button class="accordion" onclick="openCategory('spirits')">Other Spirits</button>
+              <div class="panel spirits">
+
+              </div> -->
+          </section>
+
+            <!-- Categories Section -->
+            <section id="categories">
+                <h3>Our Drinks are Categorized into:</h3>
+                <ul class="catList">
+                    <li data-filter=".whiskey, .cognac">Whisky &amp; Cognac
+                      <span>(15)</span>
+                    </li>
+                    <li data-filter=".gin, .vodka">Gin &amp; Vodka
+                      <span>(includes G&V)</span>
+                    </li>
+                    <li data-filter=".spiritual">Other Spirits
+                      <span>(8)</span>
+                    </li>
+                </ul>
+                
+               </span>
+           </div>
+                </div>
+            </section>
+
+            <div class="name">
+              <p id="name"></p>
+            </div>
+            <div class="alcoholic">
+              <p id="alcoholic"></p>
+            </div> -->
+
+            <!-- Contact Us Section -->
+            <section id="contactUs">
+            </div>
+            <a href="#home" class="navItem selected">Home</a>
+            <a href="#categorie." class="navItem">Categories</a>
+            <a href="#contactUs" class="navItem">Contact Us</a>
+        </div>
+        <!-- Footer -->
+      <footer>
+        <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-google-   plus"></i></a>
+        <p>&copy; 2015 Cocktail Palace. &nbsp;&nbsp;|&nbsp;&nbsp;
+                  <p>&copy; Copyright 2014 Cocktail Palace. &bull; All Rights Reserved.</p>
+      </footer>
+<div class="content"></div>
+                <h3>Get in touch with us:</h3>
+                <p>Email: cocktailpalace@gmail.com<br />
+                Phone number: 07986543210</p>
+                 </section>
+        </main>
+    </body>
+</html>
+<?php include "footer.inc"; ?/>
+
+<!-- <ul id="list">
+  <li>Item 1 <button onclick="selectItem(this)">Select</button></li>
+  <li>Item 2 <button onclick="selectItem(this)">Select</button></li>
+  <li>Item 3 <button onclick="selectItem(this)">Select</button></li>
+  <li>Item 4 <button onclick="selectItem(this)">Select</button></li>
+  <li>Item 5 <button onclick="selectItem(this)">Select</button></li>
+</ul>
+<p id="output"></p> -->
+<!-- <form id="searchForm" onsubmit="return search(event)">
+  <input type="text" id="searchBar" placeholder="Search...">
+  <button type="submit">Search</button>
+</form>
+<ul id="results"></ul>
+                        </div> -->
+                <!-- <div class = "search">
+                            <input type="text" placeholder="Search..." class="searchInput">
+                        </div>
+                    </div>
+                    <button type="my-button" onclick="navigateToPage()">Enter</button> -->
+
+            <!-- </div>
+        </nav>
+        <section class="container">
+            <div class="cocktail-details">
+            <div class="name">
+              <p id="Name"></p>
+            </div>
+            <div class="alcoholic">
+              <p id="Alcoholic"></p>
+            </div>
+
+            </ul>
+            </div>
+          </section>
+    </body>
+
+</html> -->

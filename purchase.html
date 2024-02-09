@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Cocktail Palace</title>
+    </head>
+    <body>
+        <!-- purchasing  cocktails  -->      
+        <section class="cocktail-list">
+            <h2>Our Cocktails:</h2>
+            
+            <div id="cocktail-card-container">
+                <!-- display the list of cocktails here -->
+                
+            </div>
+        </section>
+
+        <section class="add-to-cart">
+            <form action="" method="post">
+                <label for="drinkSelect">Choose a Drink:</label><br />
+                <select name="drinkSelect" id="drinkSelect">
+                    <option value="none">--Please choose an option--</option>
+                    
+                    <!-- add options for each drink in the array below -->
+                    
+                </select><br />
+                <input type="submit" value="Add to Cart" />
+            </form>
+        </section>
+
+        <section class="shopping-cart">
+            <h3>Shopping Cart:</h3>
+            <ul id="cart-items">
+                
+            </ul>
+            <p id="total"></p>
+        </section>
+
+        <script src="scripts.js"></script>  
+        <!-- main section starts from here -->
+        <section class="main">
+            <h2>Our Cocktails</h2>
+            
+            <div class="drink-container">
+                <!-- display all the drinks in a loop without using php -->
+                <div class="drink">
+                    <img src="images/margarita.jpg" alt="Margarita" />
+                    <h3>The Margarita</h3>
+                    <ul>
+                        <li>Ingredients: Tequila, lime juice, Cointreau, and agave nectar.</li>
+                        <li>Instructions: Shake with ice for about 30 seconds, strain into a glass, garnish with a lime wedge.</li>
+                        <li>Instructions: Shake with ice for about 15 seconds, strain into a glass, and garnish with a lime wedge.</li>
+                        <li>Instructions: Shake with ice for about 30 seconds, strain into a glass, garnish with a lime wedge.</li>
+                        <li>Instructions: Shake with ice for about 15 seconds, strain into a glass, garnish with a lime wedge.</li>
+                        <li>Instructions: Shake with ice for about 30 seconds, strain into a glass, garnish with a lime wedge.</li>
+                        <li>Instructions: Shake all ingredients with ice and strain into a glass filled with ice. Garnish with a lime wedge.</li>
+                        <li>Glass: Highball glass with ice.</li>
+                        <li>Instructions: Stir all the ingredients with ice and strain into the glass.</li>
+                    </ul>
+                    
+                    <!-- add to cart button -->
+                    <form action="" method="post">
+                        <input type="submit" value="Add To Cart" onclick="addToCart('Margarita', 5)" />
+                    </form>
+                </div>
+                
+                <!-- repeat the above code for other drinks -->
+                <div id="cocktailContent"></div>
+            </div>
+        </section>     
+       
