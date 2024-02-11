@@ -99,33 +99,146 @@
 //        ingredients.innerHTML = "";
 //        for (let i = 1; i <= 15; i++) { const ingredient = cocktail[]}};
 
-const form = document.getElementById("search-form"), input = document.getElementById("search-input"), container = document.getElementById("result-container"), message = document.getElementById("result-message"), image = document.getElementById("result-image"), title = document.getElementById("result-title"), ingredients = document.getElementById("result-ingredients");
+// `const` form = document.getElementById("search-form"), input = document.getElementById("search-input"), container = document.getElementById("result-container"), message = document.getElementById("result-message"), image = document.getElementById("result-image"), title = document.getElementById("result-title"), ingredients = document.getElementById("result-ingredients");
 
-// Show the result container and hide the search form
-const showResult = () => { container.style.display = "block"; form.style.display = "none"; };
+// // Show the result container and hide the search form
+// const showResult = () => { container.style.display = "block"; form.style.display = "none"; };
 
-// Hide the result container and show the search form
-const hideResult = () => { container.style.display = "none"; form.style.display = "block"; };
+// // Hide the result container and show the search form
+// const hideResult = () => { container.style.display = "none"; form.style.display = "block"; };
 
-// Display the cocktail result
-const displayResult = (cocktail) => { message.textContent = ""; image.src = cocktail.strDrinkThumb; title.textContent = cocktail.strDrink; ingredients.innerHTML = ""; for (let i = 1; i <= 15; i++) { const ingredient = cocktail[strIngredient${i}]; if (ingredient) { ingredients.innerHTML += <li>${ingredient} - ${ cocktail[strMeasure${i}] }</li>; } } };
+// // Display the cocktail result
+// const displayResult = (cocktail) => { message.textContent = ""; image.src = cocktail.strDrinkThumb; title.textContent = cocktail.strDrink; ingredients.innerHTML = ""; for (let i = 1; i <= 15; i++) { const ingredient = cocktail[strIngredient${i}]; if (ingredient) { ingredients.innerHTML += <li>${ingredient} - ${cocktail[strMeasure${i}]}</li>; } } };
+
+// const searchButton = document.getElementById("searchButton");
+
+// // Handle search button click
+//  function searchCocktails() { const searchInput = input.value.trim(); if (!searchInput) { message.textContent = "Please enter a cocktail name."; return; } hideResult();
+
+// // Fetch data from the API
+// fetch(`https://thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
+// .then(response => {
+//      if (!response.ok) {
+//          throw new Error("Error fetching data");
+//          } return response.json();
+//         })
+//         .then(data => {
+//              if (data.drinks && data.drinks.length > 0) {
+//                 displayResult(data.drinks[0]);
+//                  showResult();
+//                  } else { message.textContent = "No cocktails found with that name."; } })
+//                   .catch(error => { console.error("Error fetching data", error); message.textContent = "An error occurred while searching. Please try again."; showResult(); }); }
+
+// searchButton.onclick = searchCocktails;
+
+//  form = document.getElementById("search-form"),
+//  input = document.getElementById("search-input"),
+//  container = document.getElementById("result-container"),
+//  message = document.getElementById("result-message"),
+//  image = document.getElementById("result-image"),
+//  title = document.getElementById("result-title"),
+//  ingredients = document.getElementById("result-ingredients");
+
+// // Show the result container and hide the search form
+//  const showResult = () => {
+//      container.style.display = "block";
+//       form.style.display = "none"; };
+
+// // Hide the result container and show the search form
+//  const hideResult = () => {
+//      container.style.display = "none";
+//       form.style.display = "block";
+//      };
+
+// // Display the cocktail result
+//  const displayResult = (cocktail) => {
+//     message.textContent = "";
+//     image.src = cocktail.strDrinkThumb;
+//     title.textContent = cocktail.strDrink;
+//     ingredients.innerHTML = ""; for (let i = 1;
+//     i <= 15; i++) { const ingredient = cocktail[strIngredient${i}];
+//     if (ingredient) { ingredients.innerHTML += <li>${ingredient} - ${cocktail[strMeasure${i}]}</li>; } } };
+
+// const searchButton = document.getElementById("searchButton");
+
+// // Handle search button click
+//  function searchCocktails() { const searchInput = input.value.trim(); if (!searchInput) { message.textContent = "Please enter a cocktail name."; return; } hideResult();
+
+// // Fetch data from the API
+//  fetch(`https://thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
+//  .then(response => { if (!response.ok)
+//     { throw new Error("Error fetching data"); } return response.json(); }) .then(data => { if (data.drinks && data.drinks.length > 0) { displayResult(data.drinks[0]); showResult(); } else { message.textContent = "No cocktails found with that name."; } }) .catch(error => { console.error("Error fetching data", error); message.textContent = "An error occurred while searching. Please try again."; showResult(); }); }
+
+// searchButton.onclick = searchCocktails;
+
+const form = document.getElementById("search-form"),
+      input = document.getElementById("search-input"),
+      container = document.getElementById("result-container"),
+      message = document.getElementById("result-message"),
+      image = document.getElementById("result-image"),
+      title = document.getElementById("result-title"),
+      ingredients = document.getElementById("result-ingredients");
+
+const showResult = () => {
+    container.style.display = "block";
+    form.style.display = "none";
+};
+
+const hideResult = () => {
+    container.style.display = "none";
+    form.style.display = "block";
+};
+
+const displayResult = (cocktail) => {
+    message.textContent = "";
+    image.src = cocktail.strDrinkThumb;
+    title.textContent = cocktail.strDrink;
+    ingredients.innerHTML = "";
+
+    // Loop through ingredients and measures
+    for (let i = 1; i <= 15; i++) {
+        const ingredient = cocktail[`strIngredient${i}`];
+        const measure = cocktail[`strMeasure${i}`];
+
+        // Check if both ingredient and measure exist
+        if (ingredient && measure) {
+            ingredients.innerHTML += `<li>${ingredient} - ${measure}</li>`;
+        } else if (ingredient) {
+            ingredients.innerHTML += `<li>${ingredient}</li>`;
+        }
+    }
+};
 
 const searchButton = document.getElementById("searchButton");
 
-// Handle search button click
- function searchCocktails() { const searchInput = input.value.trim(); if (!searchInput) { message.textContent = "Please enter a cocktail name."; return; } hideResult();
+function searchCocktails() {
+    const searchInput = input.value.trim();
+    if (!searchInput) {
+        message.textContent = "Please enter a cocktail name.";
+        return;
+    }
+    hideResult();
 
-Fetch data from the API
-fetch(https://wwwthecocktaildb.com/api/json/v1/1/search.php?s=${searchInput})
-.then(response => {
-     if (!response.ok) {
-         throw new Error("Error fetching data");
-         } return response.json();
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error fetching data");
+            }
+            return response.json();
         })
         .then(data => {
-             if (data.drinks && data.drinks.length > 0) {
+            if (data.drinks && data.drinks.length > 0) {
                 displayResult(data.drinks[0]);
-                 showResult();
-                 } else { message.textContent = "No cocktails found with that name."; } }) .catch(error => { console.error("Error fetching data", error); message.textContent = "An error occurred while searching. Please try again."; showResult(); }); }
+                showResult();
+            } else {
+                message.textContent = "No cocktails found with that name.";
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching data", error);
+            message.textContent = "An error occurred while searching. Please try again.";
+            showResult();
+        });
+}
 
-searchButton.onclick = searchCocktails;
+searchButton.addEventListener("click", searchCocktails);
